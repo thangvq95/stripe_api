@@ -31,41 +31,10 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return new MaterialApp(
       home: new Scaffold(
-        appBar: new AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: new Container(
-          alignment: Alignment.topCenter,
-          child: new Column(
-            children: <Widget>[
-              new SizedBox(height: 12.0),
-              new TextField(
-                controller: controller,
-              ),
-              new SizedBox(height: 12.0),
-              new FlatButton(
-                  onPressed: _startSession, child: new Text('Start Session')),
-              new SizedBox(height: 12.0),
-              new FlatButton(
-                  onPressed: _getCustomer, child: new Text('Get Customer')),
-              new SizedBox(height: 12.0),
-              new FlatButton(
-                  onPressed: _endSession, child: new Text('End Session')),
-              new SizedBox(height: 12.0),
-              new FlatButton(
-                  onPressed: _saveCard, child: new Text('Save Card')),
-              new SizedBox(height: 12.0),
-              new FlatButton(
-                  onPressed: _changeDefaultCard,
-                  child: new Text('Change Default')),
-              new SizedBox(height: 12.0),
-              new FlatButton(
-                  onPressed: _deleteCard, child: new Text('Delete Card')),
-              new SizedBox(height: 12.0),
-            ],
+          appBar: new AppBar(
+            title: const Text('Plugin example app'),
           ),
-        ),
-      ),
+          body: Container()),
     );
   }
 
@@ -157,7 +126,7 @@ class _MyAppState extends State<MyApp> {
   Map<String, String> _getHeaders(
       {required String accessToken,
       String acceptType = ContentTypeJson,
-      String contentType = ContentTypeJson}) {
+      String? contentType = ContentTypeJson}) {
     final Map<String, String> headers = new Map<String, String>();
     headers['Accept'] = acceptType;
     if (contentType != null) {
